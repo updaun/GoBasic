@@ -1,4 +1,4 @@
-//채널(Channel) 기초(5)
+// 채널(Channel) 기초(6)
 
 package main
 
@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	//채널(Channel)
-	//Close : 채널 닫기
+	// 채널(Channel)
+	// Close : 채널 닫기
 
 	ch := make(chan int)
 
@@ -21,11 +21,11 @@ func main() {
 	val1, ok1 := <-ch
 	fmt.Println("ex1 : ", val1, ok1)
 	val2, ok2 := <-ch
-	fmt.Println("ex1 : ", val2, ok2)
+	fmt.Println("ex2 : ", val2, ok2)
 	val3, ok3 := <-ch
-	fmt.Println("ex1 : ", val3, ok3)
+	fmt.Println("ex3 : ", val3, ok3)
 
-	close(ch) //채널 닫기
+	close(ch) // 채널 닫기
 	val4, ok4 := <-ch
-	fmt.Println("ex1 : ", val4, ok4)
+	fmt.Println("ex4 : ", val4, ok4)
 }

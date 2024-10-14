@@ -1,4 +1,4 @@
-//채널(Channel) 기초(3)
+// 채널(Channel) 기초(3)
 
 package main
 
@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	//채널(Channel)
-	//예제1(동기 : 버퍼 미사용)
+	// 채널(Channel)
+	// 예제1(동기 : 버퍼 미사용)
 
 	ch := make(chan bool)
 	cnt := 6
@@ -18,7 +18,7 @@ func main() {
 		for i := 0; i < cnt; i++ {
 			ch <- true
 			fmt.Println("Go : ", i)
-			time.Sleep(1 * time.Second) //Sleep 주석 처리 후 테스트!
+			time.Sleep(1 * time.Second)
 		}
 	}()
 
@@ -26,5 +26,4 @@ func main() {
 		<-ch
 		fmt.Println("Main : ", i)
 	}
-
 }
