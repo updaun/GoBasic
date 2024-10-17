@@ -1,8 +1,10 @@
-//채널(Channel) 심화(3)
+// 채널(Channel) 심화(3)
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func receiveOnly(cnt int) <-chan int {
 	sum := 0
@@ -32,11 +34,14 @@ func total(c <-chan int) <-chan int {
 }
 
 func main() {
-	//채널(Channel)
+	// 채널(Channel)
 
-	//예제1
-	c := receiveOnly(100) //채널 반환
-	output := total(c)    //채널 전달 후 반환
-	//output <- 777 //예외
-	fmt.Println("ex1 : ", <-output)
+	// 예제1
+	c := receiveOnly(100) // 채널 반환
+	output := total(c)    // 채널 전달 및 반환
+
+	// output <- 777 // Error : 수신 전용 채널에서 발신 처리
+
+	fmt.Println("ex1: ", <-output)
+
 }

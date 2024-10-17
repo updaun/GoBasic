@@ -1,16 +1,14 @@
-//채널(Channel) 심화(2)
+// 채널(Channel) 심화(2)
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func sum(cnt int) <-chan int {
 	sum := 0
 	tot := make(chan int)
 	go func() {
-		for i := 1; i < cnt; i++ {
+		for i := 1; i <= cnt; i++ {
 			sum += i
 		}
 		tot <- sum
@@ -19,12 +17,11 @@ func sum(cnt int) <-chan int {
 }
 
 func main() {
-	//채널(Channel)
-	//채널 또한 함수의 반환 값으로 사용 가능
+	// 채널(Channel)
+	// 채널 또한 함수의 반환 값으로 사용 가능
 
-	//예제1
+	// 예제1
 	c := sum(100)
 
-	fmt.Println("ex1 : ", <-c)
-
+	fmt.Println("ex1: ", <-c)
 }
