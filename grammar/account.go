@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"../grammar/accounts"
 )
@@ -12,8 +13,12 @@ func main() {
 	// fmt.Println(account)
 
 	account := accounts.NewAccount("nico")
-	fmt.Println(account)
 	account.Deposit(10)
-	fmt.Println(account)
+	fmt.Println(account.Balance())
+	err := account.Withdraw(20)
+	if err != nil {
+		fmt.Println(err)
+		log.Fatalln(err) // log.Fatal will stop the program
+	}
 	fmt.Println(account.Balance())
 }
