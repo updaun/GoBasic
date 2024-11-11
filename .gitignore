@@ -33,3 +33,6 @@ go.work
 # go
 bin/
 pkg/
+
+# vscode
+.vscode/
