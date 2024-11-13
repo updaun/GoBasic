@@ -36,3 +36,6 @@ pkg/
 
 # vscode
 .vscode/
+
+# csv
+*.csv
