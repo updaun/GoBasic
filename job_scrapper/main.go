@@ -3,6 +3,8 @@ package main
 import (
 	"strings"
 
+	"myproject/scrapper"
+
 	"github.com/labstack/echo/v4"
 )
 

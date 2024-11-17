@@ -67,8 +67,8 @@ func getPage(page int, url string, mainC chan<- []extractedJob) {
 
 func extractJob(card *goquery.Selection, c chan<- extractedJob) {
 	id, _ := card.Attr("value")
-	title := cleanString(card.Find(".area_job>.job_tit>a").Text())
-	location := cleanString(card.Find(".area_job>.job_condition>span>a").Text())
+	title := CleanString(card.Find(".area_job>.job_tit>a").Text())
+	location := CleanString(card.Find(".area_job>.job_condition>span>a").Text())
 	c <- extractedJob{
 		id:       id,
 		title:    title,
@@ -76,7 +76,7 @@ func extractJob(card *goquery.Selection, c chan<- extractedJob) {
 	}
 }
 
-func cleanString(str string) string {
+func CleanString(str string) string {
 	return strings.Join(strings.Fields(strings.TrimSpace(str)), " ")
 }
 
