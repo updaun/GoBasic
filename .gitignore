@@ -44,3 +44,6 @@ pkg/
 .DS_Store
 
 *.txt
+
+# xlsx
+*.xlsx
